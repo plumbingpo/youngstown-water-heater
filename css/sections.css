@@ -180,7 +180,13 @@
 /* Homepage hero: real photo under a warm charcoal scrim (the water-heater signature, vs HVAC's gradient grid) */
 .hero-home { background-position: center 40%; }
 .hero-home::before {
-  background: linear-gradient(160deg, rgba(24,14,9,0.95) 0%, rgba(120,48,14,0.66) 52%, rgba(24,14,9,0.93) 100%);
+  /* Darkest behind the headline/copy (left-center), lighter toward the edges so the photo shows */
+  background: radial-gradient(ellipse 70% 90% at 30% 52%, rgba(22,13,8,0.93) 0%, rgba(24,14,9,0.86) 40%, rgba(70,30,11,0.6) 75%, rgba(100,40,13,0.4) 100%);
+}
+@media (max-width: 768px) {
+  .hero-home::before {
+    background: radial-gradient(ellipse 95% 70% at 50% 40%, rgba(22,13,8,0.92) 0%, rgba(24,14,9,0.84) 50%, rgba(70,30,11,0.6) 85%, rgba(100,40,13,0.45) 100%);
+  }
 }
 .hero .container { position: relative; z-index: 2; }
 
